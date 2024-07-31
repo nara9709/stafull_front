@@ -1,37 +1,33 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useRecoilState } from "recoil";
-import { language } from "../../state";
+import { Link } from "react-router-dom";
 
 const Setting = (props) => {
   const { i18n } = useTranslation();
 
-  const changeLanguage = () => {
-    console.log(languageInfo);
-    i18n.changeLanguage(languageInfo);
-    console.log(i18n.language);
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
   };
-
-  const [languageInfo, setLanguage] = useRecoilState(language);
 
   return (
     <div>
       <button
         onClick={() => {
-          setLanguage("kr");
-          changeLanguage();
+          changeLanguage("kr");
         }}
       >
         한국어
       </button>
       <button
         onClick={() => {
-          setLanguage("en");
-          changeLanguage();
+          changeLanguage("en");
         }}
       >
         English
       </button>
+      <Link to={"/calendar"}>
+        <button>Go to home!</button>
+      </Link>
     </div>
   );
 };
