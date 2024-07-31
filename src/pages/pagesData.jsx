@@ -1,8 +1,8 @@
-import Calendar from "../Calendar";
-import Setting from "../Setting";
-import Staff from "../Staff";
-import Wage from "../Wage";
+import Calendar from "../components/calendar/Calendar";
+import Setting from "../components/setting/Setting";
+import Staff from "../components/staff/Staff";
 import { createBrowserRouter } from "react-router-dom";
+import Wage from "../components/wage/Wage";
 
 const pagesData = createBrowserRouter([
   {
