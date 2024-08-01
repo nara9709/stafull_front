@@ -3,12 +3,13 @@ import Setting from "../components/setting/Setting";
 import Staff from "../components/staff/Staff";
 import { createBrowserRouter } from "react-router-dom";
 import Wage from "../components/wage/Wage";
+import Login from "../components/login/login";
 
 const pagesData = createBrowserRouter([
   {
     path: "/",
-    element: <Calendar />,
-    title: "main",
+    element: <Login />,
+    title: "login",
   },
   {
     path: "/calendar",
@@ -24,6 +25,11 @@ const pagesData = createBrowserRouter([
     path: "/staff",
     element: <Staff />,
     title: "staff",
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    title: "login",
   },
   {
     path: "/setting",

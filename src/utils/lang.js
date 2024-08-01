@@ -19,6 +19,7 @@ const english = {
     storeName: "Store Name",
     ownerName: "Owner's Name",
     openingDate: "Opening Date",
+    loginLine: "Staff in Your Hands",
   },
 };
 
@@ -43,6 +44,7 @@ const korean = {
     storeName: "매장명",
     ownerName: "사장님 이름",
     openingDate: "개업일",
+    loginLine: "간단하고 편리하게 직원관리",
   },
 };
 
