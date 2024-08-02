@@ -10,7 +10,11 @@ const Login = () => {
     <>
       <div>login</div>
       {user.user && <button onClick={user.logOut}>Logout!</button>}
-      {user.user === null && <button onClick={user.loginAction}>Login</button>}
+      {user.user === null && (
+        <button onClick={user.loginAction} className="mt-3 pt-3">
+          Login
+        </button>
+      )}
     </>
   );
 };
