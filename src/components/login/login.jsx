@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import React from "react";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Login = () => {
-  const { authenticated, setAuthenticated } = useContext(AuthContext);
+  const user = useAuth();
+
+  console.log(user);
 
   return (
     <>
       <div>login</div>
-      <div>{authenticated ? "Logged In" : "Logged Out"}</div>
-      <button onClick={() => setAuthenticated(true)}>Login!</button>
+      {user.user && <button onClick={user.logOut}>Logout!</button>}
+      {user.user === null && <button onClick={user.loginAction}>Login</button>}
     </>
   );
 };
