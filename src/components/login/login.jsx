@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Button from "../UI/Button";
 import { TiDelete } from "react-icons/ti";
 import googleLogo from "../../images/google_logo.png";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const user = useAuth();
@@ -17,9 +18,9 @@ const Login = () => {
   return (
     <>
       <section>
-        <h1 className="text-3xl font-light text-left mt-28">
+        <h1 className="text-4xl font-light text-left mt-28">
           {t("loginLine")}
-          <div className=" font-bold text-3xl text-[green]">STAFull</div>
+          <div className=" font-bold text-5xl text-[green]">STAFull</div>
         </h1>
         <div className="flex flex-col mt-5 gap-4">
           <div className="flex border-[1px] rounded-md px-3 py-2 justify-between  ">
@@ -31,7 +32,12 @@ const Login = () => {
               onChange={(e) => setId(e.target.value)}
               value={id}
             />
-            <TiDelete size={"2rem"} color="grey" onClick={() => setId("")} />
+            <TiDelete
+              size={"2rem"}
+              color="grey"
+              onClick={() => setId("")}
+              className="hover:cursor-pointer"
+            />
           </div>
           <div className="flex border-[1px] rounded-md px-3 py-2 justify-between  ">
             <input
@@ -46,6 +52,7 @@ const Login = () => {
               size={"2rem"}
               color="grey"
               onClick={() => setPassword("")}
+              className="hover:cursor-pointer"
             />
           </div>
         </div>
@@ -57,9 +64,19 @@ const Login = () => {
         )}
         <div className="flex flex-col items-center gap-3 mt-20">
           <p>{t("loginWithGoogle")}</p>
-          <span className="w-16 h-16 bg-gray-200 flex content-center items-center  ">
+          <span className="w-16 h-16 bg-gray-200 flex justify-center items-center rounded-[50%] hover:cursor-pointer  ">
             <img src={googleLogo} alt="googlelogo" className="w-10 h-10" />
           </span>
+        </div>
+        <div>
+          <p className="mt-7">
+            {t("notuser")}{" "}
+            <Link to={"signup"}>
+              <span className=" underline hover:cursor-pointer">
+                {t("signup")}
+              </span>
+            </Link>
+          </p>
         </div>
       </section>
     </>
