@@ -3,6 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useTranslation } from "react-i18next";
 import Button from "../UI/Button";
 import { TiDelete } from "react-icons/ti";
+import googleLogo from "../../images/google_logo.png";
 
 const Login = () => {
   const user = useAuth();
@@ -11,6 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState();
 
   console.log(user);
+  console.log(id, password);
 
   return (
     <>
@@ -26,10 +28,10 @@ const Login = () => {
               className=" outline-none w-4/5"
               placeholder={`${t("id")}`}
               name="id"
-              onChange={(e) => setId(e.value)}
+              onChange={(e) => setId(e.target.value)}
               value={id}
             />
-            <TiDelete size={"2rem"} color="grey" />
+            <TiDelete size={"2rem"} color="grey" onClick={() => setId("")} />
           </div>
           <div className="flex border-[1px] rounded-md px-3 py-2 justify-between  ">
             <input
@@ -37,10 +39,14 @@ const Login = () => {
               className=" outline-none w-4/5"
               placeholder={`${t("password")}`}
               name="password"
-              onChange={(e) => setPassword(e.value)}
+              onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
-            <TiDelete size={"2rem"} color="grey" />
+            <TiDelete
+              size={"2rem"}
+              color="grey"
+              onClick={() => setPassword("")}
+            />
           </div>
         </div>
         {user.user && (
@@ -49,6 +55,12 @@ const Login = () => {
         {user.user === null && (
           <Button btnText={`${t("login")}`} onClick={user.loginAction} />
         )}
+        <div className="flex flex-col items-center gap-3 mt-20">
+          <p>{t("loginWithGoogle")}</p>
+          <span className="w-16 h-16 bg-gray-200 flex content-center items-center  ">
+            <img src={googleLogo} alt="googlelogo" className="w-10 h-10" />
+          </span>
+        </div>
       </section>
     </>
   );
