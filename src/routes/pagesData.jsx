@@ -4,7 +4,7 @@ import Staff from "../components/staff/Staff";
 import { createBrowserRouter } from "react-router-dom";
 import Wage from "../components/wage/Wage";
 import Login from "../components/login/login";
-import Signup from "../components/login/signup";
+import Signup from "../components/signup/Signup";
 
 const pagesData = createBrowserRouter([
   {

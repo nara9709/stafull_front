@@ -5,6 +5,7 @@ import Button from "../UI/Button";
 import { TiDelete } from "react-icons/ti";
 import googleLogo from "../../images/google_logo.png";
 import { Link } from "react-router-dom";
+import Input from "../UI/Input";
 
 const Login = () => {
   const user = useAuth();
@@ -23,38 +24,20 @@ const Login = () => {
           <div className=" font-bold text-5xl text-[green]">STAFull</div>
         </h1>
         <div className="flex flex-col mt-5 gap-4">
-          <div className="flex border-[1px] rounded-md px-3 py-2 justify-between  ">
-            <input
-              type="text"
-              className=" outline-none w-4/5"
-              placeholder={`${t("id")}`}
-              name="id"
-              onChange={(e) => setId(e.target.value)}
-              value={id}
-            />
-            <TiDelete
-              size={"2rem"}
-              color="grey"
-              onClick={() => setId("")}
-              className="hover:cursor-pointer"
-            />
-          </div>
-          <div className="flex border-[1px] rounded-md px-3 py-2 justify-between  ">
-            <input
-              type="password"
-              className=" outline-none w-4/5"
-              placeholder={`${t("password")}`}
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-            <TiDelete
-              size={"2rem"}
-              color="grey"
-              onClick={() => setPassword("")}
-              className="hover:cursor-pointer"
-            />
-          </div>
+          <Input
+            type={"text"}
+            placeholder={`${t("id")}`}
+            onChange={setId}
+            value={id}
+            name="id"
+          />
+          <Input
+            type={"password"}
+            placeholder={`${t("password")}`}
+            onChange={setPassword}
+            value={[password]}
+            name="password"
+          />
         </div>
         {user.user && (
           <Button btnText={`${t("logout")}`} onClick={user.logOut} />
@@ -70,8 +53,8 @@ const Login = () => {
         </div>
         <div>
           <p className="mt-7">
-            {t("notuser")}{" "}
-            <Link to={"signup"}>
+            {t("notuser")}
+            <Link to={"/signup"}>
               <span className=" underline hover:cursor-pointer">
                 {t("signup")}
               </span>

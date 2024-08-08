@@ -7,6 +7,7 @@ import Calendar from "./components/calendar/Calendar";
 import Staff from "./components/staff/Staff";
 import Wage from "./components/wage/Wage";
 import Setting from "./components/setting/Setting";
+import Signup from "./components/signup/Signup";
 
 function App() {
   useEffect(() => {});
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
           {/* Pages only can aceess for user */}
           <Route element={<PrivateRoute />}>

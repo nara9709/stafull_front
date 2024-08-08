@@ -36,7 +36,7 @@ const resources = {
       logout: "로그아웃",
       loginWithGoogle: "sns로 간편하게 시작하기",
       notuser: "아직 회원이 아니신가요?",
-      signup: "가입하기",
+      signup: "회원가입",
       userInfo: "기본정보",
       storeInfo: "매장정보",
       usedId: "이미 사용 중인 아이디입니다",
