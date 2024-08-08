@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/login/login";
 import PrivateRoute from "./routes/PrivateRoute";
 import Calendar from "./components/calendar/Calendar";
@@ -11,10 +11,12 @@ import Setting from "./components/setting/Setting";
 function App() {
   useEffect(() => {});
   return (
-    <div className="App">
+    <main className=" max-w-[900px]">
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+
+          {/* Pages only can aceess for user */}
           <Route element={<PrivateRoute />}>
             <Route path="/" element={<Calendar />} />
             <Route path="/calendar" element={<Calendar />} />
@@ -24,7 +26,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </div>
+    </main>
   );
 }
 

@@ -4,6 +4,7 @@ import Staff from "../components/staff/Staff";
 import { createBrowserRouter } from "react-router-dom";
 import Wage from "../components/wage/Wage";
 import Login from "../components/login/login";
+import Signup from "../components/login/signup";
 
 const pagesData = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ const pagesData = createBrowserRouter([
     path: "/login",
     element: <Login />,
     title: "login",
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+    title: "signup",
   },
   {
     path: "/setting",
