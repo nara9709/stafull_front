@@ -19,9 +19,8 @@ section {
   justify-content: center;
   flex-direction: column;
 }
-/* 
+
 input {
-  border: 1px solid rgb(197, 195, 195);
   border-radius: 5px;
-  padding: 1rem 1.3rem;
-} */
+  padding: 0.5rem 1rem;
+}

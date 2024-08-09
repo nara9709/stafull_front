@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Input from "../UI/Input";
+import Button from "../UI/Button";
 
 const Signup = (props) => {
   //General info
@@ -44,6 +45,39 @@ const Signup = (props) => {
           name="passwordSec"
         />
       </div>{" "}
+      <p className="mt-5 mb-2 text-left text-sm">
+        {t("storeInfo")}
+        <input type="text" />
+      </p>
+      <div className=" flex flex-col gap-3">
+        <Input
+          type={"text"}
+          placeholder={`${t("storeName")}`}
+          onChange={setStoreName}
+          value={storeName}
+          name="storeName"
+        />
+        <Input
+          type={"text"}
+          placeholder={`${t("ownerName")}`}
+          onChange={setOwnerName}
+          value={ownerName}
+          name="ownerName"
+        />
+        <Input
+          type={"date"}
+          placeholder={`${t("openingDate")}`}
+          onChange={setDateOpening}
+          value={dateOpening}
+          name="dateOpening"
+        />
+      </div>{" "}
+      <Button
+        btnText={t("signup")}
+        onClick={() => {
+          console.log("signup");
+        }}
+      />
     </section>
   );
 };

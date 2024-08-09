@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useTranslation } from "react-i18next";
 import Button from "../UI/Button";
-import { TiDelete } from "react-icons/ti";
 import googleLogo from "../../images/google_logo.png";
 import { Link } from "react-router-dom";
 import Input from "../UI/Input";
@@ -53,7 +52,7 @@ const Login = () => {
         </div>
         <div>
           <p className="mt-7">
-            {t("notuser")}
+            {t("notuser")}{" "}
             <Link to={"/signup"}>
               <span className=" underline hover:cursor-pointer">
                 {t("signup")}
