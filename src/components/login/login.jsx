@@ -17,6 +17,7 @@ const Login = () => {
 
   return (
     <>
+      {" "}
       <section>
         <h1 className="text-4xl font-light text-left mt-28">
           {t("loginLine")}
@@ -29,6 +30,10 @@ const Login = () => {
             onChange={setId}
             value={id}
             name="id"
+            isRequired={true}
+            isError={false}
+            errorMessage={""}
+            clickDelete={setId}
           />
           <Input
             type={"password"}
@@ -36,6 +41,10 @@ const Login = () => {
             onChange={setPassword}
             value={[password]}
             name="password"
+            isRequired={true}
+            isError={false}
+            errorMessage={""}
+            clickDelete={setPassword}
           />
         </div>
         {user.user && (

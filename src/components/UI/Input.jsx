@@ -10,20 +10,18 @@ const Input = ({
   onChange,
   value,
   isRequired,
-  isError,
-  errorMessage,
+  iserror,
+  errormessage,
   clickDelete,
 }) => {
-  console.log(isError);
+  console.log(iserror);
   const { t } = useTranslation();
   return (
     <>
-      <div className="flex border-[1px] rounded-md px-3 py-2 justify-between items-center ">
+      <div className="flex border-[1px] rounded-md px-3 py-2 justify-between items-center  ">
         <input
           type={type}
-          className={`outline-none w-4/5 ${
-            isError === true && "border-red-500"
-          }`}
+          className={`outline-none w-4/5 ${iserror && "border-red-500"}`}
           placeholder={`${t(placeholder)}`}
           name={name}
           onChange={(e) => onChange(e.target.value)}
@@ -38,8 +36,8 @@ const Input = ({
           className="hover:cursor-pointer"
         />
       </div>
-      {isError && (
-        <p class="text-red-500 text-s text-left mt-2">{errorMessage}</p>
+      {iserror && (
+        <p class="text-red-500 text-s text-left mt-2">{errormessage}</p>
       )}
     </>
   );

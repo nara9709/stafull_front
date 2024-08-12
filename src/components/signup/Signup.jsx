@@ -6,14 +6,14 @@ import { TiDelete } from "react-icons/ti";
 
 const Signup = (props) => {
   //General info
-  const [id, setId] = useState();
-  const [password, setPassword] = useState();
-  const [passwordSec, setPasswordSec] = useState();
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordSec, setPasswordSec] = useState("");
 
   // Store info
-  const [storeName, setStoreName] = useState();
-  const [ownerName, setOwnerName] = useState();
-  const [dateOpening, setDateOpening] = useState();
+  const [storeName, setStoreName] = useState("");
+  const [ownerName, setOwnerName] = useState("");
+  const [dateOpening, setDateOpening] = useState("");
 
   // Error state
   const [errorId, setErrorId] = useState(false);
@@ -72,20 +72,56 @@ const Signup = (props) => {
   };
 
   const checkIdAvailability = () => {
-    console.log(id);
-
     setErrorId(true);
     seterrorIdMessage(t("usedId"));
+  };
+
+  const validationPwSec = (pw) => {
+    if (pw !== password) {
+      setPasswordSec(pw);
+      return setErrorPwSec(true);
+    }
+
+    setPassword(pw);
+    return setErrorPwSec(false);
+  };
+
+  const validateStoreName = (storeName) => {
+    // Check if the store name contains only Korean characters, English letters, numbers, and spaces
+    if (!/^[a-zA-Z0-9가-힣\s]+$/.test(storeName)) {
+      setStoreName(storeName);
+      return setErrorStoreName(true);
+    }
+
+    setStoreName(storeName);
+    return setErrorStoreName(false);
+  };
+
+  const validationOwnerName = (ownerName) => {
+    // Check if the owner name contains only Korean characters, English letters, and spaces
+    // Also ensure no isolated consonants or vowels in Korean
+    if (!/^[a-zA-Z\s가-힣]+$/.test(ownerName)) {
+      setOwnerName(ownerName);
+      return setErrorOwnerName(true);
+    }
+
+    // Check if the Korean characters are complete syllables (i.e., not isolated consonants or vowels)
+    if (
+      /[^가-힣]/.test(ownerName) === false &&
+      /[ㄱ-ㅎㅏ-ㅣ]/.test(ownerName)
+    ) {
+      setOwnerName(ownerName);
+      return setErrorOwnerName(true);
+    }
+    setOwnerName(ownerName);
+    return setErrorOwnerName(false);
   };
 
   const { t } = useTranslation();
   return (
     <section>
       <h1 className=" text-3xl mt-10 text-left">{t("signup")}</h1>
-      <p className="mt-5 mb-2 text-left text-s">
-        {t("userInfo")}
-        <input type="text" />
-      </p>
+      <p className="mt-5 mb-2 text-left text-s">{t("userInfo")}</p>
       <div className="flex gap-2">
         <div className="flex border-[1px] rounded-md px-3 py-2 justify-between items-center ">
           <input
@@ -94,8 +130,8 @@ const Signup = (props) => {
             onChange={(e) => validationId(e.target.value)}
             value={id}
             name="id"
-            isError={errorId}
-            errorMessage={t("usedId")}
+            iserror={errorId}
+            errormessage={t("usedId")}
             className="outline-none "
           />
 
@@ -111,8 +147,9 @@ const Signup = (props) => {
           />
         </div>
         <button
-          className=" bg-[green] p-4 text-white rounded-md hover:cursor-pointer"
+          className=" bg-[green] p-4 text-white rounded-md hover:cursor-pointer disabled:bg-[grey]"
           onClick={checkIdAvailability}
+          disabled={errorId === true || id === "" ? true : false}
         >
           {t("checkId")}
         </button>
@@ -127,8 +164,8 @@ const Signup = (props) => {
           onChange={validationPw}
           value={password}
           name="password"
-          isError={errorPw}
-          errorMessage={t("pwValidationText")}
+          iserror={errorPw}
+          errormessage={t("pwValidationText")}
           clickDelete={() => {
             setPassword("");
             setErrorPw(false);
@@ -137,12 +174,15 @@ const Signup = (props) => {
         <Input
           type={"password"}
           placeholder={`${t("typeyourpw2")}`}
-          onChange={setPasswordSec}
+          onChange={validationPwSec}
           value={passwordSec}
+          iserror={errorPwSec}
+          errormessage={t("notMatchPw")}
+          isRequired={true}
           name="passwordSec"
           clickDelete={() => {
             setPasswordSec("");
-            errorPwSec(false);
+            setErrorPwSec(false);
           }}
         />
       </div>{" "}
@@ -154,16 +194,30 @@ const Signup = (props) => {
         <Input
           type={"text"}
           placeholder={`${t("storeName")}`}
-          onChange={setStoreName}
+          onChange={validateStoreName}
           value={storeName}
           name="storeName"
+          iserror={errorStoreName}
+          errormessage={t("storeNameValidationText")}
+          isRequired={true}
+          clickDelete={() => {
+            setStoreName("");
+            setErrorStoreName(false);
+          }}
         />
         <Input
           type={"text"}
           placeholder={`${t("ownerName")}`}
-          onChange={setOwnerName}
+          onChange={validationOwnerName}
           value={ownerName}
           name="ownerName"
+          isRequired={true}
+          iserror={errorOwnerName}
+          errormessage={t("nameValidationText")}
+          clickDelete={() => {
+            setOwnerName("");
+            setErrorOwnerName(false);
+          }}
         />
         <Input
           type={"date"}
@@ -171,6 +225,7 @@ const Signup = (props) => {
           onChange={setDateOpening}
           value={dateOpening}
           name="dateOpening"
+          isRequired={true}
         />
       </div>{" "}
       <Button

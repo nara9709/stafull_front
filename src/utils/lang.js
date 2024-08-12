@@ -26,6 +26,8 @@ const resources = {
         "Password must be 8-20 characters, including 1 uppercase letter and 1 special symbol",
       idValidationText:
         "ID must be 4-20 characters long and can include numbers",
+      nameValidationText: "Numbers and special symbols cannot be included",
+      storeNameValidationText: "Special symbols cannot be included",
     },
   },
   kr: {
@@ -55,6 +57,8 @@ const resources = {
         "비밀번호는 대문자 1개와 특수 기호 1개를 포함해 8자 이상 20자 이하여야 합니다.",
       idValidationText:
         "아이디는 4자 이상 20자 이하의 영문 대소문자와 숫자만 허용됩니다",
+      nameValidationText: "숫자와 특수 기호는 포함될 수 없습니다",
+      storeNameValidationText: "특수기호는 포함될 수 없습니다.",
     },
   },
 };
