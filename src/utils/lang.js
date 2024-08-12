@@ -8,7 +8,6 @@ const resources = {
       id: "ID",
       password: "Password",
       login: "Login",
-      logout: "Logout",
       loginWithGoogle: "Login with Google",
       notuser: "Create an account and start STAFull",
       signup: "Sign Up",
@@ -22,6 +21,11 @@ const resources = {
       ownerName: "Owner's Name",
       openingDate: "Opening Date",
       loginLine: "Staff in Your Hands",
+      checkId: "Check Availability",
+      pwValidationText:
+        "Password must be 8-20 characters, including 1 uppercase letter and 1 special symbol",
+      idValidationText:
+        "ID must be 4-20 characters long and can include numbers",
     },
   },
   kr: {
@@ -33,10 +37,9 @@ const resources = {
       id: "아이디",
       password: "비밀번호",
       login: "로그인",
-      logout: "로그아웃",
-      loginWithGoogle: "sns로 간편하게 시작하기",
+      loginWithGoogle: "구글로 로그인",
       notuser: "아직 회원이 아니신가요?",
-      signup: "회원가입",
+      signup: "가입하기",
       userInfo: "기본정보",
       storeInfo: "매장정보",
       usedId: "이미 사용 중인 아이디입니다",
@@ -47,6 +50,11 @@ const resources = {
       ownerName: "사장님 이름",
       openingDate: "개업일",
       loginLine: "간단한 직원관리",
+      checkId: "중복체크",
+      pwValidationText:
+        "비밀번호는 대문자 1개와 특수 기호 1개를 포함해 8자 이상 20자 이하여야 합니다.",
+      idValidationText:
+        "아이디는 4자 이상 20자 이하의 영문 대소문자와 숫자만 허용됩니다",
     },
   },
 };
