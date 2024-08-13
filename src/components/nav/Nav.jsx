@@ -4,9 +4,14 @@ import { CiCalendar } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { CiDollar } from "react-icons/ci";
 import { CiSun } from "react-icons/ci";
+import { useLocation } from "react-router-dom";
 
 const Nav = (props) => {
   const { t } = useTranslation();
+  const location = useLocation().pathname;
+
+  console.log(location);
+
   return (
     <section className="p-5 flex flex-row gap-14 bg-white absolute bottom-0 left-0 w-full">
       <div className="flex flex-col justify-center items-center">

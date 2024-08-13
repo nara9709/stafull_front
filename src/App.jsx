@@ -13,8 +13,8 @@ import Nav from "./components/nav/Nav";
 function App() {
   useEffect(() => {});
   return (
-    <main className=" max-w-[900px]">
-      <BrowserRouter>
+    <BrowserRouter>
+      <main className=" max-w-[900px]">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
@@ -28,9 +28,10 @@ function App() {
             <Route path="/setting" element={<Setting />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-      <Nav />
-    </main>
+
+        <Nav />
+      </main>
+    </BrowserRouter>
   );
 }
 
