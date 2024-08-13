@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useTranslation } from "react-i18next";
 import Button from "../UI/Button";
 import googleLogo from "../../images/google_logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../UI/Input";
 
 const Login = () => {
@@ -11,14 +11,20 @@ const Login = () => {
   const { t } = useTranslation();
   const [id, setId] = useState();
   const [password, setPassword] = useState();
+  const navigation = useNavigate();
 
   console.log(user);
   console.log(id, password);
 
+  useEffect(() => {
+    if (user) {
+      navigation("/");
+    }
+  }, [user]);
   return (
     <>
       {" "}
-      <section>
+      <section className=" absolute top-0 bg-white w-full p-5">
         <h1 className="text-4xl font-light text-left mt-28">
           {t("loginLine")}
           <div className=" font-bold text-5xl text-[green]">STAFull</div>

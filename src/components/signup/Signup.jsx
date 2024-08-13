@@ -119,11 +119,11 @@ const Signup = (props) => {
 
   const { t } = useTranslation();
   return (
-    <section>
+    <section className=" absolute top-0 bg-white w-full p-5">
       <h1 className=" text-3xl mt-10 text-left">{t("signup")}</h1>
       <p className="mt-5 mb-2 text-left text-s">{t("userInfo")}</p>
       <div className="flex gap-2">
-        <div className="flex border-[1px] rounded-md px-3 py-2 justify-between items-center ">
+        <div className="flex border-[1px] rounded-md px-3 py-2 w-[70%] justify-between items-center ">
           <input
             type={"text"}
             placeholder={`${t("id")}`}
@@ -132,7 +132,6 @@ const Signup = (props) => {
             name="id"
             iserror={errorId}
             errormessage={t("usedId")}
-            className="outline-none "
           />
 
           <TiDelete

@@ -8,6 +8,7 @@ import Staff from "./components/staff/Staff";
 import Wage from "./components/wage/Wage";
 import Setting from "./components/setting/Setting";
 import Signup from "./components/signup/Signup";
+import Nav from "./components/nav/Nav";
 
 function App() {
   useEffect(() => {});
@@ -28,6 +29,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <Nav />
     </main>
   );
 }
