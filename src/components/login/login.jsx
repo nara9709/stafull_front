@@ -17,10 +17,10 @@ const Login = () => {
   console.log(id, password);
 
   useEffect(() => {
-    if (user) {
+    if (user.user) {
       navigation("/");
     }
-  }, [user]);
+  }, [user.user, navigation]);
   return (
     <>
       {" "}
