@@ -9,12 +9,14 @@ import Wage from "./components/wage/Wage";
 import Setting from "./components/setting/Setting";
 import Signup from "./components/signup/Signup";
 import Nav from "./components/nav/Nav";
+import Header from "./components/Header/Header";
 
 function App() {
   useEffect(() => {});
   return (
     <BrowserRouter>
-      <main className=" max-w-[900px]">
+      <main className=" max-w-[900px] px-5">
+        <Header />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

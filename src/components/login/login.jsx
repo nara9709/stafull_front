@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useTranslation } from "react-i18next";
 import Button from "../UI/Button";
-import googleLogo from "../../images/google_logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../UI/Input";
 
@@ -62,7 +61,11 @@ const Login = () => {
         <div className="flex flex-col items-center gap-3 mt-20">
           <p>{t("loginWithGoogle")}</p>
           <span className="w-16 h-16 bg-gray-200 flex justify-center items-center rounded-[50%] hover:cursor-pointer  ">
-            <img src={googleLogo} alt="googlelogo" className="w-10 h-10" />
+            <img
+              src={"/images/google_logo.png"}
+              alt="googlelogo"
+              className="w-10 h-10"
+            />
           </span>
         </div>
         <div>
