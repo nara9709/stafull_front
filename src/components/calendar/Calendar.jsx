@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Profile from "../UI/Profile";
+import { Link, useNavigate } from "react-router-dom";
 
 const DAY = {
   0: "sunday",
@@ -16,8 +17,13 @@ const Calendar = (props) => {
   const { t } = useTranslation();
   const time = new Date();
   const today = DAY[`${time.getDay()}`];
+  const navigation = useNavigate();
 
   console.log(today);
+
+  const onClickProfile = (staffId) => {
+    navigation(`/staff/${staffId}`);
+  };
 
   return (
     <section className=" bg-greenTransparency p-4 border-greenLight border rounded-lg">
@@ -26,10 +32,16 @@ const Calendar = (props) => {
         {time.getMonth() < 10 && "0"}
         {time.getMonth()}.{time.getDate()}
       </p>
-      <span className="w-full h-[1px] bg-[grey] "></span>
-      <div className="flex gap-2 py-5">
+      <span className="w-full h-[0.5px] bg-greenLight "></span>
+      <div className="flex gap-2 py-5 w-full overflow-x-scroll items-center content-center">
         {staffs.map((staff, i) => (
-          <Profile src={staff.imageurl} alt={staff.lastname} key={i} />
+          <Profile
+            src={staff.imageurl}
+            alt={staff.lastname}
+            key={i}
+            onClick={() => onClickProfile(staff.id)}
+            text={staff.lastname}
+          />
         ))}
       </div>
     </section>
@@ -43,25 +55,42 @@ const staffs = [
     firstname: "Bra",
     lastname: "kio",
     imageurl: "/images/profile_sample.png",
+    id: "123",
   },
   {
     firstname: "Bra",
     lastname: "kio",
     imageurl: "/images/profile_sample.png",
+    id: "133",
   },
   {
     firstname: "Bra",
     lastname: "kio",
     imageurl: "/images/profile_sample.png",
+    id: "1333",
   },
   {
     firstname: "Bra",
     lastname: "kio",
     imageurl: "/images/profile_sample.png",
+    id: "2123",
   },
   {
     firstname: "Bra",
     lastname: "kio",
     imageurl: "/images/profile_sample.png",
+    id: "12333",
+  },
+  {
+    firstname: "Bra",
+    lastname: "kio",
+    imageurl: "/images/profile_sample.png",
+    id: "2123",
+  },
+  {
+    firstname: "Bra",
+    lastname: "kio",
+    imageurl: "/images/profile_sample.png",
+    id: "12333",
   },
 ];
