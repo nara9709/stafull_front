@@ -6,6 +6,9 @@
   font-family: "Pretendard";
   src: url("./fonts/PretendardVariable.ttf");
 }
+main {
+  margin: auto;
+}
 
 body {
   margin: 0;

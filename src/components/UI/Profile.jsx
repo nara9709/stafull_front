@@ -7,9 +7,9 @@ const Profile = ({ src, alt, onClick, text }) => {
         onClick={onClick}
         src={src}
         alt={alt}
-        className="rounded-full w-16 h-16"
+        className="rounded-full w-16 h-16 object-cover cursor-pointer"
       />
-      {text && <p>{text}</p>}
+      {text && <p className="text-center text-sm mt-1">{text}</p>}
     </div>
   );
 };

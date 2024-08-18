@@ -1,13 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Profile from "../UI/Profile";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const DAY = {
   0: "sunday",
   1: "monday",
   2: "tuesday",
-  3: "wendsday",
+  3: "wednesday",
   4: "thursday",
   5: "friday",
   6: "saturday",
@@ -19,21 +19,21 @@ const Calendar = (props) => {
   const today = DAY[`${time.getDay()}`];
   const navigation = useNavigate();
 
-  console.log(today);
-
   const onClickProfile = (staffId) => {
     navigation(`/staff/${staffId}`);
   };
 
   return (
-    <section className=" bg-greenTransparency p-4 border-greenLight border rounded-lg">
-      <h1 className=" font-extrabold text-2xl text-green">{t(`${today}`)}</h1>
-      <p className=" text-grey mb-4">
-        {time.getMonth() < 10 && "0"}
-        {time.getMonth()}.{time.getDate()}
+    <section className="bg-greenTransparency p-4 border-greenLight border rounded-lg">
+      <h1 className="font-extrabold text-2xl text-green">{t(`${today}`)}</h1>
+      <p className="text-grey mb-4">
+        {time.getMonth() + 1 < 10
+          ? `0${time.getMonth() + 1}`
+          : time.getMonth() + 1}
+        .{time.getDate() < 10 ? `0${time.getDate()}` : time.getDate()}
       </p>
-      <span className="w-full h-[0.5px] bg-greenLight "></span>
-      <div className="flex gap-2 py-5 w-full overflow-x-scroll items-center content-center">
+      <span className="w-full h-[0.5px] bg-greenLight"></span>
+      <div className="flex gap-2 py-5 w-full overflow-x-auto items-center">
         {staffs.map((staff, i) => (
           <Profile
             src={staff.imageurl}
