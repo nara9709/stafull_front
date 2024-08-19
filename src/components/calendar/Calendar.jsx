@@ -1,8 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Profile from "../UI/Profile";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ShiftBoard from "../UI/shiftBoard";
+import i18n from "../../utils/i18n";
 
 const DAY = {
   0: "sunday",
@@ -14,7 +15,7 @@ const DAY = {
   6: "saturday",
 };
 
-const Calendar = (props) => {
+const Calendar = () => {
   const { t } = useTranslation();
   const time = new Date();
   const today = DAY[`${time.getDay()}`];
@@ -25,12 +26,25 @@ const Calendar = (props) => {
   const onClickProfile = (staffId) => {
     navigation(`/staff/${staffId}`);
   };
+  const lang = i18n.language;
 
   return (
     <section>
-      <h1 className=" text-left text-xl font-semibold mb-4">
-        {t("todayStaff")}
-      </h1>
+      <div className="flex items-center justify-between mb-4">
+        <h1 className=" text-left text-xl font-semibold">{t("todayStaff")}</h1>
+        <div
+          className={`text-sm bg-greyBg  ${
+            lang === "kr" ? "w-24" : "w-32"
+          } py-2 px-1 rounded-md`}
+        >
+          <span className="bg-greenLight px-2 py-1 rounded-md mr-2 hover:cursor-pointer">
+            {t("daily")}
+          </span>
+          <Link to={"/calendar/monthly"}>
+            <span className="hover:cursor-pointer">{t("monthly")}</span>
+          </Link>
+        </div>
+      </div>
       <div className="bg-greenTransparency  p-4 border-greenLight border rounded-lg overflow-x-auto">
         <h1 className="font-bold text-xl text-green">{t(`${today}`)}</h1>
         <p className="text-grey mb-4">
