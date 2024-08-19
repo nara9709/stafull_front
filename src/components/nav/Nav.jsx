@@ -23,7 +23,7 @@ const Nav = () => {
   };
 
   return (
-    <section className="p-5 flex flex-row gap-14 bg-white absolute bottom-0 left-0 w-full max-w-[900px] mx-auto md:absolute md:left-auto md:right-0">
+    <section className="p-5 flex flex-row gap-14 bg-white absolute bottom-0 left-0 w-full max-w-[900px] mx-auto md:absolute md:right-0">
       <Link to={"/"}>
         <div className="flex flex-col justify-center items-center">
           <CiCalendar size={"2rem"} color={getIconColor("")} />

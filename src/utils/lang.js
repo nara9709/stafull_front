@@ -35,6 +35,8 @@ const resources = {
       thursday: "Thursday",
       friday: "Friday",
       saturday: "Saturday",
+      todayStaff: "Today's Staff",
+      nextShift: "Next Shift",
     },
   },
   kr: {
@@ -73,6 +75,8 @@ const resources = {
       thursday: "목요일",
       friday: "금요일",
       saturday: "토요일",
+      todayStaff: "오늘 근무자",
+      nextShift: "다음 근무표",
     },
   },
 };

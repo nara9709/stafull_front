@@ -8,6 +8,8 @@ module.exports = {
       greenLight: "rgba(200, 225, 199, 0.7843)",
       greenTransparency: "rgba(235, 255, 235, 0.16)",
       grey: "#d1d1d1",
+      greyBg: "#F5F5F5",
+      greyText: "#757575",
     },
   },
 
