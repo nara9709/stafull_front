@@ -24,10 +24,10 @@ function App() {
 
           {/* Pages only can aceess for user */}
           <Route element={<PrivateRoute />}>
-            <Route path="/" element={<Calendar />} />
+            <Route path="/" element={<Monthly />} />
 
-            <Route path="/calendar" element={<Calendar />} />
-            <Route path="/calendar/monthly" element={<Monthly />} />
+            <Route path="/calendar" element={<Monthly />} />
+            {/* <Route path="/calendar/monthly" element={<Monthly />} /> */}
             <Route path="/staff" element={<Staff />} />
             <Route path="/wage" element={<Wage />} />
             <Route path="/setting" element={<Setting />} />
