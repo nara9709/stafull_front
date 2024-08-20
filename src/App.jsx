@@ -10,12 +10,13 @@ import Setting from "./components/setting/Setting";
 import Signup from "./components/signup/Signup";
 import Nav from "./components/nav/Nav";
 import Header from "./components/Header/Header";
+import Monthly from "./components/calendar/Monthly";
 
 function App() {
   useEffect(() => {});
   return (
     <BrowserRouter>
-      <main className=" max-w-[900px] px-5">
+      <main className=" max-w-[900px] px-5 bg-greyBgLight h-[100vh] m-auto">
         <Header />
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -24,7 +25,9 @@ function App() {
           {/* Pages only can aceess for user */}
           <Route element={<PrivateRoute />}>
             <Route path="/" element={<Calendar />} />
-            <Route path="/calendar" element={<Calendar />} />
+
+            <Route path="calendar/calendar" element={<Calendar />} />
+            <Route path="/calendar/monthly" element={<Monthly />} />
             <Route path="/staff" element={<Staff />} />
             <Route path="/wage" element={<Wage />} />
             <Route path="/setting" element={<Setting />} />

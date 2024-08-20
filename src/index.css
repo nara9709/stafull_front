@@ -6,15 +6,13 @@
   font-family: "Pretendard";
   src: url("./fonts/PretendardVariable.ttf");
 }
-main {
-  margin: auto;
-}
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Pretendard";
+  background-color: #fafafa;
 }
 
 section {
@@ -29,8 +27,84 @@ input {
   padding: 0.5rem 1rem;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
 ::-webkit-scrollbar {
   overflow: scroll;
   width: 0px;
   background: transparent; /* make scrollbar transparent */
+}
+
+/* React calendar custom */
+
+.react-calendar {
+  width: 100%;
+  max-width: 100%;
+  background: #ffff;
+  line-height: 3em;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+.react-calendar__tile--active {
+  position: relative; /* 가상 요소를 위해 position을 relative로 설정 */
+  color: black;
+  z-index: 0; /* 가상 요소가 아래에 오도록 설정 */
+}
+
+.react-calendar__tile--active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 126, 28, 0.1);
+  border-radius: 100px; /* background에만 적용할 border-radius */
+  z-index: -1; /* 가상 요소를 아래에 위치시킴 */
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: none; /* 기존 배경 제거 */
+  color: black;
+}
+
+.react-calendar__tile--now {
+  color: #1e7e1c;
+  border-bottom: 1px solid #1e7e1c; /* border는 그대로 유지 */
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  color: #1e7e1c;
+  border-radius: 0; /* border-radius 제거 */
+}
+
+.react-calendar__navigation {
+  display: flex;
+}
+
+.react-calendar__navigation__arrow {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+.react-calendar__navigation__label__labelText--from {
+  font-weight: 900;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #d1d1d1;
 }

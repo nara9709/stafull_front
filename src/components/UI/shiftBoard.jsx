@@ -9,7 +9,7 @@ const ShiftBoard = ({ day, date, staffList }) => {
   };
 
   return (
-    <div className="flex w-full h-20 bg-greyBg text-greyText py-4 items-center rounded-lg mt-3 ">
+    <div className="flex w-full h-20 bg-[white] text-greyText py-4 items-center rounded-lg mt-3 ">
       <div className="px-4 w-[20%]">
         <p className="text-sm">{day.split("")[0]}</p>
         <p className="text-sm">{date}</p>

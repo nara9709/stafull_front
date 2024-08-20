@@ -33,9 +33,9 @@ const Calendar = () => {
       <div className="flex items-center justify-between mb-4">
         <h1 className=" text-left text-xl font-semibold">{t("todayStaff")}</h1>
         <div
-          className={`text-sm bg-greyBg  ${
+          className={`text-sm bg-[white]  ${
             lang === "kr" ? "w-24" : "w-32"
-          } py-2 px-1 rounded-md`}
+          } py-2 px-0.5 rounded-md font-light `}
         >
           <span className="bg-greenLight px-2 py-1 rounded-md mr-2 hover:cursor-pointer">
             {t("daily")}
@@ -45,7 +45,7 @@ const Calendar = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-greenTransparency  p-4 border-greenLight border rounded-lg overflow-x-auto">
+      <div className="bg-[white]  p-4  rounded-lg overflow-x-auto">
         <h1 className="font-bold text-xl text-green">{t(`${today}`)}</h1>
         <p className="text-grey mb-4">
           {time.getMonth() + 1 < 10
