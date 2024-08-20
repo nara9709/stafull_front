@@ -26,7 +26,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/" element={<Calendar />} />
 
-            <Route path="calendar/calendar" element={<Calendar />} />
+            <Route path="/calendar" element={<Calendar />} />
             <Route path="/calendar/monthly" element={<Monthly />} />
             <Route path="/staff" element={<Staff />} />
             <Route path="/wage" element={<Wage />} />

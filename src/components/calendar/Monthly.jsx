@@ -17,14 +17,14 @@ const Monthly = (props) => {
         <div
           className={`text-sm bg-[white]  ${
             lang === "kr" ? "w-24" : "w-32"
-          } py-2 px-0.5 rounded-md font-light right-0 `}
+          } py-2 px-0.5 rounded-md font-light right-0 flex items-center justify-center`}
         >
-          <span className="bg-greenLight px-2 py-1 rounded-md mr-2 hover:cursor-pointer">
-            {t("daily")}
-          </span>
           <Link to={"/calendar"}>
-            <span className="hover:cursor-pointer">{t("monthly")}</span>
+            <span className=" hover:cursor-pointer">{t("daily")}</span>
           </Link>
+          <span className=" bg-greenLight px-2 py-1 rounded-md ml-2 hover:cursor-pointer">
+            {t("monthly")}
+          </span>
         </div>
       </div>
       <Calendar

@@ -12,7 +12,6 @@ const Nav = () => {
 
   // Get icon's color by pathname
   const getIconColor = (iconName) => {
-    console.log(location.split("/")[1]);
     if (iconName === location.split("/")[1]) {
       return "green";
     } else if (iconName === "" && location.split("/")[1] === "calendar") {
@@ -23,7 +22,7 @@ const Nav = () => {
   };
 
   return (
-    <section className="p-3 flex flex-row gap-14 bg-[white] absolute bottom-0 left-0 w-full max-w-[900px] mx-auto md:absolute md:right-0 h-20">
+    <section className="p-3 flex flex-row gap-14 bg-[white] absolute bottom-0 left-0 w-full mx-auto md:absolute md:right-0 h-20">
       <Link to={"/"}>
         <div className="flex flex-col justify-center items-center">
           <CiCalendar size={"2rem"} color={getIconColor("")} />

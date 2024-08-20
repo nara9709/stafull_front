@@ -44,14 +44,14 @@ ul {
   width: 100%;
   max-width: 100%;
   background: #ffff;
-  line-height: 3em;
+  line-height: 3.5em;
   border-radius: 8px;
   padding: 0.5rem;
 }
 .react-calendar__tile--active {
-  position: relative; /* 가상 요소를 위해 position을 relative로 설정 */
+  position: relative;
   color: black;
-  z-index: 0; /* 가상 요소가 아래에 오도록 설정 */
+  z-index: 0;
 }
 
 .react-calendar__tile--active::before {
@@ -62,29 +62,31 @@ ul {
   right: 0;
   bottom: 0;
   background: rgba(30, 126, 28, 0.1);
-  border-radius: 100px; /* background에만 적용할 border-radius */
-  z-index: -1; /* 가상 요소를 아래에 위치시킴 */
+  border-radius: 100px;
+  z-index: -1;
 }
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background: none; /* 기존 배경 제거 */
+  background: none;
   color: black;
 }
 
 .react-calendar__tile--now {
   color: #1e7e1c;
-  border-bottom: 1px solid #1e7e1c; /* border는 그대로 유지 */
+  border-bottom: 1px solid #1e7e1c;
 }
 
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
   color: #1e7e1c;
-  border-radius: 0; /* border-radius 제거 */
+  border-radius: 0;
 }
 
 .react-calendar__navigation {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .react-calendar__navigation__arrow {
@@ -102,7 +104,8 @@ ul {
 }
 
 .react-calendar__navigation__label__labelText--from {
-  font-weight: 900;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {

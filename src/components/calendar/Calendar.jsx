@@ -35,7 +35,7 @@ const Calendar = () => {
         <div
           className={`text-sm bg-[white]  ${
             lang === "kr" ? "w-24" : "w-32"
-          } py-2 px-0.5 rounded-md font-light `}
+          } py-2 px-0.5 rounded-md font-light flex items-center justify-center `}
         >
           <span className="bg-greenLight px-2 py-1 rounded-md mr-2 hover:cursor-pointer">
             {t("daily")}
@@ -46,7 +46,7 @@ const Calendar = () => {
         </div>
       </div>
       <div className="bg-[white]  p-4  rounded-lg overflow-x-auto">
-        <h1 className="font-bold text-xl text-green">{t(`${today}`)}</h1>
+        <h1 className="font-bold text-xl text-greenSolid">{t(`${today}`)}</h1>
         <p className="text-grey mb-4">
           {time.getMonth() + 1 < 10
             ? `0${time.getMonth() + 1}`
