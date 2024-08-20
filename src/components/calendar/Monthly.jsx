@@ -23,8 +23,17 @@ const Monthly = () => {
   const today = DAY[`${date.getDay()}`];
   const navigation = useNavigate();
 
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  const yyyymmdd = `${year}${month}${day}`;
+
   const onClickProfile = (staffId) => {
     navigation(`/staff/${staffId}`);
+  };
+
+  const onClickShiftboard = () => {
+    navigation(`/calendar/daily/${yyyymmdd}`);
   };
 
   return (
@@ -39,11 +48,15 @@ const Monthly = () => {
           formatDay={(locale, date) => moment(date).format("DD")}
           value={date}
           onClickDay={() => {
-            console.log(date);
+            console.log(yyyymmdd);
           }}
         />
       </div>
-      <div className="bg-[white]  p-4  rounded-lg overflow-x-auto">
+      {/* Shift Board */}
+      <div
+        className="bg-[white]  p-4  rounded-lg overflow-x-auto hover:cursor-pointer"
+        onClick={onClickShiftboard}
+      >
         <h1 className="font-bold text-xl text-greenSolid">{t(`${today}`)}</h1>
         <p className="text-grey mb-4">
           {date.getMonth() + 1 < 10
@@ -64,6 +77,7 @@ const Monthly = () => {
           ))}
         </div>
       </div>
+      {/* Shift Board End */}
     </section>
   );
 };

@@ -15,8 +15,6 @@ const Nav = () => {
     if (iconName === location.split("/")[1]) {
       return "green";
     } else if (iconName === "" && location.split("/")[1] === "calendar") {
-      console.log("icon", iconName, "location", location.split("/")[1]);
-      console.log("got it");
       return "green";
     }
   };

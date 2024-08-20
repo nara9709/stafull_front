@@ -3,7 +3,6 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/login/login";
 import PrivateRoute from "./routes/PrivateRoute";
-import Calendar from "./components/calendar/Calendar";
 import Staff from "./components/staff/Staff";
 import Wage from "./components/wage/Wage";
 import Setting from "./components/setting/Setting";
@@ -11,6 +10,7 @@ import Signup from "./components/signup/Signup";
 import Nav from "./components/nav/Nav";
 import Header from "./components/Header/Header";
 import Monthly from "./components/calendar/Monthly";
+import Daily from "./components/calendar/Daily";
 
 function App() {
   useEffect(() => {});
@@ -27,7 +27,8 @@ function App() {
             <Route path="/" element={<Monthly />} />
 
             <Route path="/calendar" element={<Monthly />} />
-            {/* <Route path="/calendar/monthly" element={<Monthly />} /> */}
+            <Route path="/calendar/daily/:id" element={<Daily />} />
+
             <Route path="/staff" element={<Staff />} />
             <Route path="/wage" element={<Wage />} />
             <Route path="/setting" element={<Setting />} />
