@@ -11,8 +11,8 @@ export const ChannelItem = ({ channel }) => {
         alignItems: "center",
         width: "74px",
         height: "90px",
-        padding: "0.5rem",
-        backgroundColor: "white",
+        marginBottom: "1rem",
+        gap: "0.2rem",
       }}
     >
       {/* Overwrite styles by add eg. style={{ maxHeight: 52, maxWidth: 52,... }} */}
@@ -24,13 +24,13 @@ export const ChannelItem = ({ channel }) => {
         style={{
           width: "100%",
           height: "100%",
-          maxHeight: 60,
-          maxWidth: 60,
+          maxHeight: 40,
+          maxWidth: 40,
           borderRadius: "100%",
           objectFit: "cover",
         }}
       />
-      <span>{firstName}</span>
+      <span className=" text-sm">{firstName}</span>
     </ChannelBox>
   );
 };
