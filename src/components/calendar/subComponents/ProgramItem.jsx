@@ -20,6 +20,7 @@ export const ProgramItem = ({ program, ...rest }) => {
 
   const onSchedule = () => {
     console.log(data);
+    console.log();
   };
   return (
     <ProgramBox

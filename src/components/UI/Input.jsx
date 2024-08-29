@@ -18,10 +18,12 @@ const Input = ({
   const { t } = useTranslation();
   return (
     <>
-      <div className="flex border-[1px] rounded-md px-3 py-2 justify-between items-center  ">
+      <div className="flex border-[1px] bg-[white] rounded-md px-3 py-2 justify-between items-center  ">
         <input
           type={type}
-          className={`outline-none w-4/5 ${iserror && "border-red-500"}`}
+          className={`outline-none w-4/5 ${
+            iserror && "border-red-500"
+          } bg-white`}
           placeholder={`${t(placeholder)}`}
           name={name}
           onChange={(e) => onChange(e.target.value)}

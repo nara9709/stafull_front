@@ -39,6 +39,10 @@ const resources = {
       nextShift: "Next Shift",
       daily: "Daily",
       monthly: "Monthly",
+      searchWithName: "Search with name",
+      CreateNewStaff: "Create new staff",
+      total: "total",
+      people: "people",
     },
   },
   kr: {
@@ -81,6 +85,10 @@ const resources = {
       nextShift: "다음 근무표",
       daily: "일별",
       monthly: "월별",
+      searchWithName: "이름으로 검색하세요",
+      CreateNewStaff: "직원등록",
+      total: "총",
+      people: "명",
     },
   },
 };

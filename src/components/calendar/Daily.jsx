@@ -3,9 +3,6 @@ import { Epg, Layout } from "planby";
 
 // Import hooks
 import { useApp } from "../../hooks/useApp";
-import { Timeline } from "./subComponents/Timeline";
-import { ProgramItem } from "./subComponents/ProgramItem";
-import { ChannelItem } from "./subComponents/Channelitem";
 import { useParams } from "react-router-dom";
 
 // Import components
@@ -17,7 +14,7 @@ function App() {
   return (
     <div>
       <div style={{ height: "80vh", width: "100%" }}>
-        <Epg isLoading={isLoading} {...getEpgProps()}>
+        {/* <Epg isLoading={isLoading} {...getEpgProps()}>
           <Layout
             {...getLayoutProps()}
             renderTimeline={(props) => <Timeline {...props} />}
@@ -28,7 +25,7 @@ function App() {
               <ChannelItem key={channel.uuid} channel={channel} />
             )}
           />
-        </Epg>
+        </Epg> */}
       </div>
     </div>
   );
