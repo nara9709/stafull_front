@@ -3,14 +3,20 @@ import Input from "../UI/Input";
 import Button from "../UI/Button";
 import { useTranslation } from "react-i18next";
 import Profile from "../UI/Profile";
+import { useNavigate } from "react-router-dom";
 
 const Staff = (props) => {
   const { t } = useTranslation();
   const [keyword, setKeyword] = useState();
+  const navigation = useNavigate();
 
   const checkWorkDay = (staffDay, day) => {
     console.log(staffDay.find((workday) => workday === day));
     return staffDay.find((workday) => workday === day);
+  };
+
+  const onCreateStaff = () => {
+    navigation("/staff/create");
   };
 
   return (
@@ -20,7 +26,7 @@ const Staff = (props) => {
         value={keyword}
         onChange={setKeyword}
       />
-      <Button btnText={`${t("CreateNewStaff")}`} />
+      <Button btnText={`${t("CreateNewStaff")}`} onClick={onCreateStaff} />
 
       <p className=" mt-3 text-right font-thin">
         {t("total")} <span className=" font-bold"> {data.length}</span>

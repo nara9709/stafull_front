@@ -11,6 +11,7 @@ import Nav from "./components/nav/Nav";
 import Header from "./components/Header/Header";
 import Monthly from "./components/calendar/Monthly";
 import Daily from "./components/calendar/Daily";
+import CreateStaff from "./components/staff/CreateStaff";
 
 function App() {
   useEffect(() => {});
@@ -30,6 +31,7 @@ function App() {
             <Route path="/calendar/daily/:id" element={<Daily />} />
 
             <Route path="/staff" element={<Staff />} />
+            <Route path="/staff/create" element={<CreateStaff />} />
             <Route path="/wage" element={<Wage />} />
             <Route path="/setting" element={<Setting />} />
           </Route>
